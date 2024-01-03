@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta charset="UTF-8">
+    <title>Rules</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+<div class="close"><a href="javascript:close()" alt="Close"> </a></div>
+<div class="wrapper">
+    <main id="content">
+        Test
+    </main>
+    <footer id="activeTime">
+    </footer>
+</div>
+
+<script type="text/javascript">
+  var startTime = 0;
+  window.addEventListener('message', function(obj) {
+    if(obj.data.sections) {
+      var html = "";
+      obj.data.sections = obj.data.sections.sort(function compare(a,b) {
+        if (a[2] < b[2])
+          return -1;
+        if (a[2] > b[2])
+          return 1;
+        return 0;
+      });
+      obj.data.sections.forEach(function(section) {
+            html += section[1];
+      });
+      document.getElementById("content").innerHTML = html;
+    }
+    if(obj.data.startTime) {
+      startTime = obj.data.startTime;
+      setInterval(updateTime, 1000)
+    }
+  });
+  function updateTime() {
+    var date = new Date();
+    document.getElementById("activeTime").innerHTML = msToHMS(date.getTime() - startTime);
+  }
+  function close() {
+    window.parent.postMessage({'close': window.name}, '*');
+  }
+
+
+  function msToHMS( ms ) {
+    // 1- Convert to seconds:
+    var seconds = ms / 1000;
+    // 2- Extract hours:
+    var hours = parseInt( seconds / 3600 ); // 3,600 seconds in 1 hour
+    if(hours <= 9) {
+      hours = "0"+hours;
+    }
+    seconds = seconds % 3600; // seconds remaining after extracting hours
+    // 3- Extract minutes:
+    var minutes = parseInt( seconds / 60 ); // 60 seconds in 1 minute
+    if(minutes <= 9) {
+      minutes = "0"+minutes;
+    }
+    // 4- Keep only seconds not extracted to minutes:
+    seconds = seconds % 60;
+    seconds = Math.ceil(seconds);
+    if(seconds <= 9) {
+      seconds = "0"+seconds;
+    }
+    return hours+":"+minutes+":"+seconds;
+  }
+
+
+  window.onload = function() {
+    document.body.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+    });
+    document.body.addEventListener('gesturechange', function(e) {
+      e.preventDefault();
+    });
+    document.onkeydown = function(evt_) {
+      var evt = evt_ || window.event;
+      var isEscape = false;
+      if ('key' in evt) {
+        isEscape = (evt.key === 'Escape' || evt.key === 'Esc');
+      } else {
+        isEscape = (evt.keyCode === 27);
+      }
+      if (isEscape) {
+        close();
+      }
+    };
+  };
+</script>
+</body>
+</html>
+
+

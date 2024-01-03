@@ -1,0 +1,253 @@
+html {
+    touch-action: pan-y;
+}
+
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body,
+.wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #ffffff;
+    font-family: 'Noto Sans', 'Arial', sans-serif;
+    font-size: 16px;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+.wrapper::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+    background-color: #6B6B6B;
+    border-radius: 10px;
+    border: 1px solid #515151;
+    -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background: #C9C9C9;
+    border: 1px solid #8C8C8C;
+    border-radius: 10px;
+    -moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.wrapper::-webkit-scrollbar-button:start:decrement,
+.wrapper::-webkit-scrollbar-button:end:increment {
+    display: block;
+    color: #D9D9D9;
+}
+
+/* Turn on single button up on top, and down on bottom */
+.wrapper::-webkit-scrollbar-button:start:decrement,
+.wrapper::-webkit-scrollbar-button:end:increment {
+    display: block;
+}
+
+/* Turn off the down area up on top, and up area on bottom */
+.wrapper::-webkit-scrollbar-button:vertical:start:increment,
+.wrapper::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none;
+}
+
+/* Place The scroll down button at the bottom */
+::-webkit-scrollbar-button:end:increment {
+    background-image: url(arrow_down.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Place The scroll up button at the up */
+::-webkit-scrollbar-button:start:decrement {
+    background-image: url(arrow_up.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+section:last-child {
+    margin-bottom: 2rem;
+}
+
+h1, h2 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 1rem 0 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.33);
+}
+
+tr:last-child {
+    border-bottom: 0;
+}
+
+td, th {
+    padding: 0.5rem 1rem;
+}
+
+td:first-child {
+    text-align: center;
+    width: 50%;
+}
+
+td:nth-child(2n) {
+    width: 50%;
+}
+
+td img, th img {
+    display: block;
+    margin: 0 auto;
+}
+
+img.button {
+    max-height: 5rem;
+    max-width: 8rem;
+}
+
+.close {
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+
+.close a {
+    display: block;
+    background-image: url('ui_exit.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.close a:hover {
+    background-image: url('ui_exit_over.png');
+}
+
+.close a:active {
+    background-image: url('ui_exit_pressed.png');
+}
+
+main {
+    margin: 0 auto;
+}
+
+.wrapper {
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+@media screen and (max-width: 770px) {
+    .wrapper {
+        padding: 20px 50px 20px 50px;
+    }
+}
+
+@media screen and (min-width: 771px) {
+    .wrapper {
+        padding: 20px 150px 20px 150px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .wrapper {
+        padding: 20px 300px 20px 200px;
+    }
+}
+@media screen and (min-width: 480px) {
+    .close {
+        height: 48px;
+        width: 48px;
+    }
+
+    td:first-child {
+        width: 40%;
+    }
+
+    td:nth-child(2n) {
+        width: 60%;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .close {
+        height: 80px;
+        width: 80px;
+    }
+
+
+    td:first-child {
+        width: 30%;
+    }
+
+    td:nth-child(2n) {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    td:first-child {
+        width: 25%;
+    }
+
+    td:nth-child(2n) {
+        width: 75%;
+    }
+}
+
+.imgcenter div{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.imgright div{
+    display: block;
+    margin-left: auto;
+
+}
+.imgleft div{
+    display: block;
+    margin-right: auto;
+
+}
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow:hidden;
+}

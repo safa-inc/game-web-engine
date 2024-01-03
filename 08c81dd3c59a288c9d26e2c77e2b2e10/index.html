@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="-webkit-background-size: cover;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimal-ui, viewport-fit=cover"/>
+    <!--for IOS-->
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+    <title>Loading...</title>
+    <link rel="stylesheet" href="css/notify.css">
+    <link href="css/slots.css" media="screen" rel="stylesheet">
+
+  </head>
+  <body>
+  <div id="error-overlay" style="display: none;">
+    <div id="error-frame">
+      <div id="error-red">
+        <div id="error-excl">!</div>
+        <div id="error-right">
+          <div id="error-pane"><h1 id="error-header"></h1>
+            <div id="error-message"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <div id="foregroud"
+         style="background-color: rgba(255, 0, 0, 0.0);width: 100%;height: 100%;position: absolute;display: block;z-index: 1000;">
+    </div>
+    <div id="backgroundParent">
+      <div class="background" id="main_bg"></div>
+    </div>
+
+    <div class="fontPreload"> </div>
+    <div id="landscapeWarning">
+    </div>
+    <div id="restest"></div>
+    <div id="loading">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+      </div>
+      Loading...
+    </div>
+    <iframe src="rules2/index.html" width="1920" height="1200" frameborder="0"
+            style="position: absolute;display: none;z-index: 20000;"
+            id="rules_frame"></iframe>
+  </div>
+<div id="wrapper"></div>
+  <div class="fullscreen-background" data-active="false"></div>
+  <div class="fullscreen-instructions" data-active="false">
+    <svg class="fullscreen-instructions-swipe" viewBox="0 0 100 100">
+      <path d="M3.6,60.1c25,8.6,19.4,27,42.1,27h11.1c7.6,0,18-3.4,18-18V38c0-3-2.4-5.4-5.4-5.4c-3,0-5.4,2.4-5.4,5.4v5.3
+		h-1.3v-8c0-3-2.4-5.4-5.4-5.4s-5.4,2.4-5.4,5.4v8h-1.3V33.2c0-3-2.4-5.4-5.4-5.4c-3,0-5.4,2.4-5.4,5.4v10.1h-1.3V20.7v-3.6v-4.5
+		c0-3-2.4-5.4-5.4-5.4s-5.4,2.4-5.4,5.4v4.6v3.6v37.2L7.2,50c-2.8-1-5.9,0.4-6.9,3.2C-1.1,57.2,2.1,59.6,3.6,60.1z"></path>
+      <path d="M44.8,11.6C44.8,5.2,39.6,0,33.2,0c-6.4,0-11.6,5.2-11.6,11.6c0,3.6,1.7,6.9,4.3,9v-4.5
+		c-0.8-1.3-1.3-2.8-1.3-4.5c0-4.7,3.9-8.6,8.6-8.6c4.7,0,8.6,3.9,8.6,8.6c0,1.6-0.4,3.1-1.2,4.4v4.6C43.2,18.4,44.8,15.2,44.8,11.6z
+		"></path>
+    </svg>
+  </div>
+  <div class="fullscreen-overlay" data-active="false"></div>
+
+  </body>
+  <script src="build/e.js"></script>
+  <script src="build/sg.min.js"></script>
+</html>

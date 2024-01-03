@@ -1,0 +1,52 @@
+/*
+* Noto Sans JP (japanese) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 100;
+  src: url(files/NotoSansJP-Thin.woff2) format('woff2'),
+       url(files/NotoSansJP-Thin.woff) format('woff'),
+       url(files/NotoSansJP-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 300;
+  src: url(files/NotoSansJP-Light.woff2) format('woff2'),
+       url(files/NotoSansJP-Light.woff) format('woff'),
+       url(files/NotoSansJP-Light.otf) format('opentype');
+}
+
+@font-face {
+   font-family: 'Noto Sans JP';
+   font-style: normal;
+   font-weight: 400;
+   src: url(files/NotoSansJP-Regular.woff2) format('woff2'),
+        url(files/NotoSansJP-Regular.woff) format('woff'),
+        url(files/NotoSansJP-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans JP';
+   font-style: normal;
+   font-weight: 500;
+   src: url(files/NotoSansJP-Medium.woff2) format('woff2'),
+        url(files/NotoSansJP-Medium.woff) format('woff'),
+        url(files/NotoSansJP-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans JP';
+   font-style: normal;
+   font-weight: 700;
+   src: url(files/NotoSansJP-Bold.woff2) format('woff2'),
+        url(files/NotoSansJP-Bold.woff) format('woff'),
+        url(files/NotoSansJP-Bold.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans JP';
+   font-style: normal;
+   font-weight: 900;
+   src: url(files/NotoSansJP-Black.woff2) format('woff2'),
+        url(files/NotoSansJP-Black.woff) format('woff'),
+        url(files/NotoSansJP-Black.otf) format('opentype');
+ }
